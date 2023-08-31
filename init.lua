@@ -537,6 +537,13 @@ vim.keymap.set("n", "<C-h>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
 
 
+--moving lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+
+--tmux
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.api.nvim_set_keymap('i', '<F1>', '<Esc>', { noremap = true})
 vim.api.nvim_set_keymap('n', '<F1>', '<Esc>', { noremap = true})
 vim.api.nvim_set_keymap('v', '<F1>', '<Esc>', { noremap = true})
@@ -569,7 +576,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.colorcolumn = "80"
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
